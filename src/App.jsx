@@ -1,9 +1,10 @@
 import "./App.css";
+import { ContactForm } from "./components/ContactForm/ContactForm";
 
 function App() {
 	return (
 		<>
-			<h1>My new React Project</h1>
+			<ContactForm />
 		</>
 	);
 }
