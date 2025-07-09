@@ -3,20 +3,19 @@ import { useState } from "react";
 
 const INITIAL_SELECT_VALUES = {
 	color: "",
-	state: false,
 };
 export const FavoriteColorForm = () => {
 	const [select, setSelect] = useState(INITIAL_SELECT_VALUES);
 
 	const handleFavoriteColor = ({ target: { name, value } }) => {
-		setSelect((prev) => ({ ...prev, [name]: value, state: true }));
+		setSelect((prev) => ({ ...prev, [name]: value }));
 	};
 
 	return (
-		<div>
+		<div className="favorite-color-form">
 			<label htmlFor="colors">Select your favorite color:</label>
 			<select name="color" id="colors" onChange={handleFavoriteColor}>
-				<option value="" disabled selected>
+				<option value="" disabled>
 					-- Select an option --
 				</option>
 				<option value="blue">Blue</option>
@@ -25,7 +24,7 @@ export const FavoriteColorForm = () => {
 				<option value="black">Black</option>
 			</select>
 
-			{select.state && <span>Your favorite color is {select.color}</span>}
+			{select.color && <span style={{ color: select.color }}>Your favorite color is {select.color}</span>}
 		</div>
 	);
 };
