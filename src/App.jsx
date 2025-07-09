@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import { AgeCheckForm } from "./components/AgeCheckForm/AgeCheckForm";
 import { BookingForm } from "./components/BookingForm/BookingForm";
@@ -9,20 +10,52 @@ import { FeedbacForm } from "./components/FeedbackForm/FeedbackForm";
 import { LoginForm } from "./components/LoginForm/LoginForm";
 import { NameGreetingForm } from "./components/NameGreetingForm/NameGreetingForm";
 import { RatingForm } from "./components/RatingForm/RatingForm";
+import { RegisterUserForm } from "./components/RegisterUserForm/RegisterUserForm";
+
+const users = [
+	{
+		id: 1,
+		username: "alice123",
+		password: "password1",
+	},
+	{
+		id: 2,
+		username: "bob_smith",
+		password: "1234abcd",
+	},
+	{
+		id: 3,
+		username: "carlaT",
+		password: "mySecret!",
+	},
+	{
+		id: 4,
+		username: "daniLopez",
+		password: "qwerty45",
+	},
+	{
+		id: 5,
+		username: "evaM",
+		password: "eva2025",
+	},
+];
 
 function App() {
+	const [usersState, setUsersState] = useState(users);
+
 	return (
 		<>
 			<ContactForm />
 			<NameGreetingForm />
 			<CharacterCountForm />
 			<AgeCheckForm />
-			<LoginForm />
+			<LoginForm users={usersState} />
 			<FavoriteColorForm />
 			<FeedbacForm />
 			<RatingForm />
 			<BookingForm />
 			<CurrencyConvertForm />
+			<RegisterUserForm addUser={(newUser) => setUsersState((prev) => [...prev, newUser])} />
 		</>
 	);
 }

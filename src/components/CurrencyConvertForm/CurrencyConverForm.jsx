@@ -67,7 +67,10 @@ export const CurrencyConvertForm = () => {
 			</form>
 
 			{error && <span>{error}</span>}
-			<span>{change.result}</span>
+			<span>
+				{change.result}
+				{change.currency}
+			</span>
 		</div>
 	);
 };

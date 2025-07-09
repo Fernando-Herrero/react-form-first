@@ -1,34 +1,6 @@
 import { useState } from "react";
 import "./LoginForm.css";
 
-const users = [
-	{
-		id: 1,
-		username: "alice123",
-		password: "password1",
-	},
-	{
-		id: 2,
-		username: "bob_smith",
-		password: "1234abcd",
-	},
-	{
-		id: 3,
-		username: "carlaT",
-		password: "mySecret!",
-	},
-	{
-		id: 4,
-		username: "daniLopez",
-		password: "qwerty45",
-	},
-	{
-		id: 5,
-		username: "evaM",
-		password: "eva2025",
-	},
-];
-
 const INITIAL_FORM_STATE = {
 	username: "",
 	password: "",
@@ -39,7 +11,7 @@ const INITIAL_STATE = {
 	success: "",
 };
 
-export const LoginForm = () => {
+export const LoginForm = ({ users }) => {
 	const [form, setForm] = useState(INITIAL_FORM_STATE);
 	const [state, setState] = useState(INITIAL_STATE);
 
