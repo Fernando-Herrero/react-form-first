@@ -24,7 +24,14 @@ export const NameGreetingForm = () => {
 	return (
 		<div className="show-text">
 			<label htmlFor="input-text"></label>
-			<input type="text" name="name" id="input-text" value={values.name} onChange={handleInput} />
+			<input
+				type="text"
+				name="name"
+				id="input-text"
+				autoComplete="name"
+				value={values.name}
+				onChange={handleInput}
+			/>
 			{values.show && <p>Hola, {values.name}</p>}
 			<button onClick={handleClick}>Show Text</button>
 			{error && <div className="input-error">{error}</div>}

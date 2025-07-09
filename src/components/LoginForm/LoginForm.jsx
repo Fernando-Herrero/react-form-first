@@ -68,10 +68,24 @@ export const LoginForm = () => {
 			<h1 className="login-form-title">Login Form</h1>
 			<form className="login-form" onSubmit={handleSubmit}>
 				<label htmlFor="username"></label>
-				<input type="text" id="username" name="username" value={form.username} onChange={handleInputs} />
+				<input
+					type="text"
+					id="username"
+					name="username"
+					autoComplete="username"
+					value={form.username}
+					onChange={handleInputs}
+				/>
 
 				<label htmlFor="password"></label>
-				<input type="password" id="password" name="password" value={form.password} onChange={handleInputs} />
+				<input
+					type="password"
+					id="password"
+					name="password"
+					autoComplete="current-password"
+					value={form.password}
+					onChange={handleInputs}
+				/>
 
 				<button type="submit">Submit</button>
 

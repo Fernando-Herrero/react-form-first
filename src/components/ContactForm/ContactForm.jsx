@@ -38,10 +38,17 @@ export const ContactForm = () => {
 	return (
 		<form className="contact-form" onSubmit={handleFormSubmit}>
 			<label htmlFor="name">Name:</label>
-			<input type="text" id="name" name="name" value={form.name} onChange={handleFormInput} />
+			<input type="text" id="name" name="name" autoComplete="name" value={form.name} onChange={handleFormInput} />
 
 			<label htmlFor="email">Email:</label>
-			<input type="email" id="email" name="email" value={form.email} onChange={handleFormInput} />
+			<input
+				type="email"
+				id="email"
+				name="email"
+				autoComplete="email"
+				value={form.email}
+				onChange={handleFormInput}
+			/>
 
 			<label htmlFor="reason">Reason for Contact:</label>
 			<select id="reason" name="reason" value={form.reason} onChange={handleFormInput}>
@@ -59,6 +66,7 @@ export const ContactForm = () => {
 				name="message"
 				rows="4"
 				cols="40"
+				autoComplete="off"
 				value={form.message}
 				onChange={handleFormInput}
 			></textarea>
