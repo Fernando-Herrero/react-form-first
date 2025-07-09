@@ -26,6 +26,7 @@ export const FeedbacForm = () => {
 	};
 
 	const handleFinalSubmitted = () => {
+		alert("Form sent succesfully!");
 		setForm({ ...INITIAL_FORM_STATE, succes: true });
 		console.log(form);
 	};

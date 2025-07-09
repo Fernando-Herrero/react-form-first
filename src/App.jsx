@@ -6,6 +6,7 @@ import { FavoriteColorForm } from "./components/FavoriteColorForm/FavoriteColorF
 import { FeedbacForm } from "./components/FeedbackForm/FeedbackForm";
 import { LoginForm } from "./components/LoginForm/LoginForm";
 import { NameGreetingForm } from "./components/NameGreetingForm/NameGreetingForm";
+import { RatingForm } from "./components/RatingForm/RatingForm";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 			<LoginForm />
 			<FavoriteColorForm />
 			<FeedbacForm />
+			<RatingForm />
 		</>
 	);
 }

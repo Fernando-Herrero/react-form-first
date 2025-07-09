@@ -1,0 +1,51 @@
+.rating-form {
+	padding: 2rem;
+	max-width: 400px;
+	margin: 2rem auto;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background-color: #f8f8f8;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
+
+.rating-form h1 {
+	margin-bottom: 1rem;
+	color: #333;
+}
+
+.rating-btns {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+/* ✅ Solo usas esta clase para los botones */
+.rating-btn {
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 50%;
+	background-color: #007bff;
+	color: white;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.rating-btn:hover {
+	background-color: #0056b3;
+}
+
+.rating-btn.selected {
+	background-color: #28a745; /* verde */
+}
+
+.rating-form span {
+	display: block;
+	font-size: 1.1rem;
+	color: #28a745;
+	font-weight: bold;
+}
