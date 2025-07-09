@@ -34,23 +34,33 @@ const INITIAL_FORM_STATE = {
 	password: "",
 };
 
+const INITIAL_STATE = {
+	error: "",
+	success: "",
+};
+
 export const LoginForm = () => {
 	const [form, setForm] = useState(INITIAL_FORM_STATE);
-	const [error, setError] = useState("");
+	const [state, setState] = useState(INITIAL_STATE);
 
 	const handleInputs = ({ target: { name, value } }) => {
-		setError("");
+		setState({ error: "", success: "" });
 		setForm((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const handleSubmit = () => {
-		const userFound = users.find((user) => users.username.toLowerCase() === form.username.toLowerCase());
+	const handleSubmit = (event) => {
+		event.preventDefault();
 
-		if (!userFound) return setError("Username doesnt match");
-		if (userFound.password !== form.password) return setError("Password doesnt match");
+		console.log("Username ingresado:", form.username);
 
-		alert("Login done! You can access");
-		setError("");
+		const userFound = users.find(
+			(user) => user.username.toLowerCase().trim() === form.username.toLowerCase().trim()
+		);
+
+		if (!userFound) return setState({ error: "Username doesnt match", success: "" });
+		if (userFound.password !== form.password) return setState({ error: "Password doesnt match", success: "" });
+
+		setState({ error: "", success: "Login done! You can access" });
 	};
 
 	return (
@@ -65,7 +75,8 @@ export const LoginForm = () => {
 
 				<button type="submit">Submit</button>
 
-				{error && <span>{error}</span>}
+				{state.error && <span className="error">{state.error}</span>}
+				{state.success && <span className="success">{state.success}</span>}
 			</form>
 		</>
 	);
