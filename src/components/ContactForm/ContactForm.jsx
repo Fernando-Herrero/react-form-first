@@ -33,7 +33,7 @@ export const ContactForm = () => {
 		setError("");
 	};
 
-	const isFormIncomplete = !form.name.trim() || !form.email.trim() || !form.reason || !form.message.trim();
+	// const isFormIncomplete = !form.name.trim() || !form.email.trim() || !form.reason || !form.message.trim();
 
 	return (
 		<form className="contact-form" onSubmit={handleFormSubmit}>
@@ -63,9 +63,7 @@ export const ContactForm = () => {
 				onChange={handleFormInput}
 			></textarea>
 
-			<button type="submit" disabled={isFormIncomplete}>
-				Send
-			</button>
+			<button type="submit">Send</button>
 
 			{error && <div className="form-error">{error}</div>}
 		</form>
