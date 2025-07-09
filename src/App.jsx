@@ -45,6 +45,19 @@ function App() {
 
 	return (
 		<>
+			<div className="container-users-registered-list">
+				<h1>Users registered</h1>
+				<ul className="users-registered-list">
+					{usersState.map(({ id, username, password }) => (
+						<li key={id}>
+							Username: {username}
+							<br />
+							Password: {password}
+						</li>
+					))}
+				</ul>
+			</div>
+
 			<ContactForm />
 			<NameGreetingForm />
 			<CharacterCountForm />
